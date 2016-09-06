@@ -9,7 +9,7 @@ module.exports = {
   },
   production: {
     client: 'postgres',
-    connection: process.env.DATABASE_URL
+    connection: process.env.DATABASE_URL || 'postgres://localhost:5432/fantasy_forecast'
   }
 
 };
