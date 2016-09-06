@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="fantasy_forecast">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-route.js"></script>
+  <script type="text/javascript" src="javascripts/app.js"></script>
+  <script type="text/javascript" src="javascripts/controllers/controller.js"></script>
+  <script type="text/javascript" src="javascripts/services/services.js"></script>
+  <script type="text/javascript" src="javascripts/directives/directives.js"></script>
+  <script type="text/javascript" src="javascripts/filters/filters.js">
+  </script>
+  <title>Fantasy Forecast</title>
+</head>
+
+  <body>
+  <header>
+    <a ng-href="/#/">
+    <logo class="content"></logo>
+    </a>
+    <div>
+      <a ng-href="/#/signIn" class="content">
+        <h2>Login</h2>
+      </a>
+      <a ng-href="/#/signUp" class="content">
+        <h2>Register</h2>
+      </a>
+    </div>
+  </header>
+
+  <div ng-view>
+  </div>
+
+  <div class="container">
+    <div class="content">
+      <h1>The Fantasy Football Forecast</h1>
+      <h3>Optimize your Lineup and Own your League.</h3>
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,361 @@
+body{
+  background: grey;
+  font-style: grey;
+}
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: green;
+  margin: 0;
+}
+header img {
+  height: 25vh;
+  margin-top: -5vh;
+  margin-bottom: -5vh;
+  margin-left: 1vw;
+}
+header div{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 2vw;
+}
+header h2 {
+  margin-left: 2vw;
+  margin-right: 1vw;
+  margin-top: 5.5vh;
+}
+
+/*USER ROSTER DIV*/
+#userRoster {
+  width: 100%;
+  height: 33.5vh;
+  height: 23vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: grey;
+}
+#userRoster div {
+  margin-top: 4vh;
+  border-color: black;
+  border-width: thin;
+  border-style: solid;
+  width: 17%;
+  height: 25vh;
+  height: 15vh;
+  text-align: center;
+}
+#userRoster h5 {
+  margin-bottom: 1vh;
+  margin-top: 1vh;
+}
+#userRoster h6 {
+  margin-bottom: .5vh;
+  margin-top: .5vh;
+}
+div section {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+#searchedPlayerInfo h4{
+  margin-top: 3vh;
+  margin-bottom: 1vh;
+}
+#searchedPlayerInfo{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+/*//Register view*/
+.registration {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.registration h1 {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+}
+.registration input{
+  height: 5vh;
+  width: 40vw;
+  border-radius: 5px;
+  margin-top: 2vh;
+  font-size: 1.5em;
+  padding-left: 2vw;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 2;
+  color: black;
+}
+.registration input[type=submit]{
+  background: green;
+  color: white;
+  height: 6vh;
+  width: 20vw;
+  z-index: 2;
+}
+.registration a {
+  margin-left: auto;
+  margin-right: auto;
+}
+#signup {
+  width: 60vw;
+  height: 56vh;
+  margin-top: 20vh;
+  margin-left: 18vw;
+}
+.popup-window {
+  position: absolute;
+  background-color: white;
+  border: 1px solid black;
+}
+/*//USER HOME PAGE*/
+.userHome h2 {
+  text-align: center;
+}
+.userHome h1 {
+  text-align: center;
+}
+.userHome div {
+  text-align: center;
+}
+.rosterContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+.positionContainer {
+  display: flex;
+  flex-direction: column;
+  width: 28%;
+}
+.positionContainer h3 {
+  border-color: black;
+  border-style: solid;
+  border-width: thin;
+  background: gold;
+  margin: 0;
+  margin-top: .2vh;
+  margin-bottom: .2vh;
+}
+.positionContainer div {
+  border-style: solid;
+  border-color: black;
+  border-width: thin;
+  width: 99%;
+  background: silver;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.positionContainer input[type=button]{
+  border-radius: 5px;
+  background: red;
+  width: 4vw;
+  height: 2vh;
+  color: white;
+  padding-bottom: 2.5vh;
+}
+.positionContainer h4 {
+  margin: 0;
+}
+.projectionContainer {
+  margin-top: 4.5vh;
+  display: flex;
+  flex-direction: column;
+  width: 3%;
+}
+.projectionContainer h4 {
+  margin: 0;
+  margin-top:.4vh;
+  color: blue;
+}
+.search {
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  padding-bottom: 5vh;
+}
+.search input {
+  height: 5vh;
+  width: 30vw;
+  border-radius: 5px;
+  margin-top: 2vh;
+  font-size: 1.5em;
+  padding-left: 1vw;
+}
+.search input[type = submit] {
+  background: green;
+  color: white;
+  width: 15vw;
+  padding-bottom: 5vh;
+}
+.search input[type = button] {
+  background: green;
+  color: white;
+  width: 10vw;
+  font-size: 1.2em;
+}
+#getProj {
+  background: green;
+  color: white;
+  width: 13vw;
+  height: 4.5vh;
+  padding-bottom: 4.0vh;
+  border-radius: 5px;
+  font-size: 1.2em;
+}
+#searchOutput {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+#searchAgain {
+  margin-top: 2.5vh;
+  height: 5vh;
+  width: 8vw;
+  border-radius: 5px;
+  font-size: .9em;
+  background: blue;
+  color: white;
+}
+#addPlayer {
+  margin-top: 2.5vh;
+  height: 5vh;
+  width: 12vw;
+  border-radius: 5px;
+  font-size: .9em;
+  background: green;
+  color: white;
+}
+/*//LINEUP OPTIMIZER DIV*/
+#lineupOptimizer {
+  margin-top: 2vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-bottom: 10vh;
+}
+#lineupOptimizer h4 {
+  margin: 0;
+  margin-top: 1vh;
+}
+#lineupOptimizer input[type=button] {
+  background: green;
+  color: white;
+  width: 13vw;
+  height: 4.5vh;
+  padding-bottom: 4.0vh;
+  border-radius: 5px;
+  font-size: 1.2em;
+  margin-top: 3.75vh;
+}
+#lineupOptimizer select {
+  text-align: center;
+  padding-left: 12vw;
+  height: 4vh;
+  font-size: .8em;
+}
+#lineupOptimizer select option {
+  height: 15vh;
+}
+#source {
+  width: 8vw;
+}
+#lineupOptimizer h4 {
+  margin-top: 0;
+  margin-bottom: 1vh;
+}
+#rosterAnalysis {
+  width: 95%;
+  margin-top: 2vh;
+  border-style: solid;
+  border-color: black;
+  border-width: thin;
+  padding-bottom: 5vh;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*//SIGNIN DIV*/
+#signinDiv {
+  position: absolute;
+  top: 1vh;
+  left: 61.5vh;
+  height: 41vh;
+  width: 30vw;
+  margin: auto;
+  margin-top: 20vh;
+  border-style: solid;
+  border-width: .5px;
+  border-color: black;
+  padding: 2.0vw;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  background: white; }
+
+#signinDiv h1 {
+  margin-top: 0;
+  margin-bottom: 2vh; }
+
+#signinDiv h3 {
+  margin-bottom: .3vh;
+  margin-top: .4vh}
+
+#signinDiv input {
+  margin: 0;
+  width: 25vw;
+  height: 6vh;
+  z-index: 2;
+  color: black;
+  padding-left:1vw;
+  font-size:1.3em;
+  }
+
+#signinDiv input[type=submit] {
+  border-radius: 5px;
+  background: #4c96d7;
+  margin-top: .1vh;
+  color: white;
+  font-size: 1.4em;}
+
+
+/*// *** DO NOT WRITE CODE BELOW HERE //*/
+/*THE CSS BELOW MUST GO AT THE END OF FILE*/
+.container {  position: relative; }
+
+.container:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-image: url('http://az616578.vo.msecnd.net/files/2015/08/25/635761137141108656107338707_fantasy-football.jpg');
+    background-size: cover;
+    height: 100vh;
+    opacity: 0.15;
+    margin-top: -5vh;
+    height: 100vh;
+    opacity: 0.15;
+    margin:0;
+    margin-top: -20vh;
+}
+.content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: black;
+}​
