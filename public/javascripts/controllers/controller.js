@@ -1,4 +1,4 @@
-app.controller('fantasyController', function($scope, $location, $http, $window, $route, $routeParams, fantasyService){
+app.controller('fantasyController', function($scope, $location, $http, $window, $route, $routeParams, fantasyService, $rootScope){
 
   $scope.view = {},
   $scope.view.message = "wired up and working!";
@@ -11,6 +11,7 @@ app.controller('fantasyController', function($scope, $location, $http, $window, 
   $scope.view.userRoster.WR = fantasyService.wideReceivers;
   $scope.view.userRoster.TE = fantasyService.tightTends;
   $scope.view.userRoster.K = fantasyService.kickers;
+  $scope.view.userRoster.DEF = fantasyService.defense;
   $scope.view.searchPlayerToggle = true;
   $scope.view.qbProjections = fantasyService.qbProjections;
   $scope.view.rbProjections = fantasyService.rbProjections;
@@ -19,52 +20,60 @@ app.controller('fantasyController', function($scope, $location, $http, $window, 
   $scope.view.kProjections = fantasyService.kProjections;
   $scope.view.defProjections = fantasyService.defProjections;
   $scope.view.welcome = fantasyService.welcome;
+  $scope.view.username = fantasyService.username;
 
-  $scope.view.signUp = function(usernameSignup) {
-      fantasyService.signUp(
-      $scope.view.usernameSignup,
-      $scope.view.passwordSignup,
-      $scope.view.emailSignup).then(function(res) {
-        if (res.data.errors) {
-          $scope.view.error = res.data.errors;
-        } else {
-          localStorage.jwt = res.data.token;
-          $location.path('/userHome');
-          $window.location.reload();
-          console.log($scope.view.loginGreeting);
-        }
-      })
-    }
-
-  $scope.view.signIn = function(username) {
-    $scope.view.loginGreeting = username;
-    fantasyService.signIn($scope.view.username, $scope.view.password).then(function (res) {
-      if(res.data.errors){
+$scope.view.signUp = function(usernameSignup) {
+    fantasyService.signUp(
+    $scope.view.usernameSignup,
+    $scope.view.passwordSignup,
+    $scope.view.emailSignup).then(function(res) {
+      if (res.data.errors) {
         $scope.view.error = res.data.errors;
-      }
-      else{
+      } else {
         localStorage.jwt = res.data.token;
         $location.path('/userHome');
         $window.location.reload();
-        $scope.view.signUpSuccessGreeting =
-        $scope.view.username;
       }
-    });
+    })
   }
 
-  $scope.view.searchPlayer = function (player){
-    player = player.toLowerCase();
-    $http.get('/../JSON/NFLroster.json').then(function(data){
-      var array = data.data;
-      for (var i = 0; i < array.length; i++) {
-        if (player === array[i].displayName.toLowerCase()) {
-        $scope.view.searchedPlayer.push(array[i]);
-        }
+$scope.view.signIn = function(username) {
+  fantasyService.username = username;
+  $scope.view.username = username;
+  console.log(username);
+  fantasyService.signIn($scope.view.username, $scope.view.password).then(function (res) {
+    if(res.data.errors){
+      $scope.view.error = res.data.errors;
+    }
+    else{
+      console.log('username before assignment', username);
+      $scope.view.greeting = username;
+      localStorage.jwt = res.data.token;
+      $location.path('/userHome');
+      $window.location.reload();
+    }
+  });
+}
+
+$scope.view.signOut = function() {
+  localStorage.clear();
+  $location.path('/');
+  $window.location.reload();
+}
+
+$scope.view.searchPlayer = function (player){
+  player = player.toLowerCase();
+  $http.get('/../JSON/NFLroster.json').then(function(data){
+    var array = data.data;
+    for (var i = 0; i < array.length; i++) {
+      if (player === array[i].displayName.toLowerCase()) {
+      $scope.view.searchedPlayer.push(array[i]);
       }
-      $scope.view.player = '';
-      $scope.view.searchPlayerToggle = true;
-    })
-  };
+    }
+    $scope.view.player = '';
+    $scope.view.searchPlayerToggle = true;
+  })
+};
 
 $scope.view.getProjections = function () {
   $http.get('https://www.fantasyfootballnerd.com/service/weekly-rankings/json/xj99njek7adn/QB/').then(function(data){

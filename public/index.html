@@ -8,6 +8,7 @@
   <script type="text/javascript" src="javascripts/app.js"></script>
   <script type="text/javascript" src="javascripts/controllers/controller.js"></script>
   <script type="text/javascript" src="javascripts/services/services.js"></script>
+  <script type="text/javascript" src="javascripts/jwt-decode.js"></script>
   <script type="text/javascript" src="javascripts/directives/directives.js"></script>
   <script type="text/javascript" src="javascripts/filters/filters.js">
   </script>
@@ -19,7 +20,11 @@
     <a ng-href="/#/">
     <logo class="content"></logo>
     </a>
-    <div>
+    <div ng-show="user" ng-controller="fantasyController">
+      <h2>Welcome to your homepage, {{user.username}}.</h2>
+      <input type="button" ng-click="view.signOut()" value="Sign Out" class="content">
+    </div>
+    <div ng-hide="user">
       <a ng-href="/#/signIn" class="content">
         <h2>Login</h2>
       </a>
@@ -35,7 +40,8 @@
   <div class="container">
     <div class="content">
       <h1>The Fantasy Football Forecast</h1>
-      <h3>Optimize your Lineup and Own your League.</h3>
+      <h3>Optimize your Lineup and Own your League.
+      </h3>
     </div>
   </div>
 

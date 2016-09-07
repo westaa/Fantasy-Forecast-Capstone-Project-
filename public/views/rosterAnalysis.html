@@ -1,0 +1,42 @@
+<div id ="rosterAnalysis">
+  <div class ="searchButtons">
+  <label for="source"><h4>Select Projection Source</h4>
+  <select name="projectionSource" id="source">
+    <option value="yahoo">Yahoo</option>
+    <option value="ffn">Fantasy Football Nerd</option>
+    <option value="ESPN">ESPN</option>
+  </select>
+  </label>
+  <div id = "testing">
+    <input type="button" value="Get Projections" id="getProj" ng-click="view.getQBProjections(view.userRoster.QB[0].playerId,
+    view.userRoster.QB[1].playerId, view.userRoster.QB[2].playerId, view.userRoster.RB[0].playerId, view.userRoster.RB[1].playerId, view.userRoster.RB[2].playerId, view.userRoster.RB[3].playerId, view.userRoster.WR[0].playerId, view.userRoster.WR[1].playerId, view.userRoster.WR[2].playerId,
+    view.userRoster.WR[3].playerID,
+    view.userRoster.TE[0].playerId,
+    view.userRoster.TE[1].playerId, view.userRoster.TE[2].playerId,
+    view.userRoster.TE[3].playerId,
+    view.userRoster.K[0].playerId, view.userRoster.K[1].playerId,
+    view.userRoster.K[2].playerId,
+    view.userRoster.DEF[0].playerId, view.userRoster.DEF[1].playerId
+    );">
+  </div>
+  </div>
+  <h2>Roster Analysis Tools</h2>
+  <div id ="lineupOptimizer">
+    <label for="radioinputs"><h4>Select Scoring Format</h4>
+      <div id ="radioinputs">
+        <label for="ppr">PPR</label>
+        <input type="radio" value="PPR" id="ppr" name="scoreFormat">
+        <label for="standard">Standard</label>
+        <input type="radio" value="Standard" id="standard" name="scoreFormat">
+      </div>
+    </label>
+    <label for="format"><h4>Select Lineup Format</h4>
+      <select name="format" id="format">
+        <option value="1Flex">1 QB, 2 RB, 2 WR, 1 TE, 1 FLEX, 1 K, 1 DEF</option>
+        <option value="0Flex">1 QB, 2 RB, 3 WR, 1 TE, 1 DEF</option>
+        <option value="2QB">2 QB, 2 RB, 3 WR, 1 TE, 1 DEF</option>
+    </select>
+  </label>
+  <input type="button" value="Optimize Lineup" ng-click="optimizeLineup()">
+  </div>
+</div>

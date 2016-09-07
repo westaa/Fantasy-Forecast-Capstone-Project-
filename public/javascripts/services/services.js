@@ -23,6 +23,7 @@ app.factory('fantasyService', function($http, $location) {
     wideReceivers: [],
     tightTends: [],
     kickers: [],
+    defense: [],
     qbProjections: [],
     rbProjections: [],
     wrProjections: [],

@@ -6,7 +6,7 @@ header{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background: green;
+  background: darkgreen;
   margin: 0;
 }
 header img {
@@ -20,6 +20,15 @@ header div{
   flex-direction: row;
   justify-content: flex-end;
   margin-right: 2vw;
+}
+header div input[type=button] {
+  background: silver;
+  height: 4vh;
+  color: black;
+  font-size: 1.1em;
+  border-radius: 5px;
+  margin-top: 5.5vh;
+  margin-left: .5vw;
 }
 header h2 {
   margin-left: 2vw;
@@ -118,11 +127,23 @@ div section {
   border: 1px solid black;
 }
 /*//USER HOME PAGE*/
+.userHome {
+  background-image: url('http://bgfons.com/upload/stone_texture566.jpg');
+  background-size: cover;
+  opacity:;
+  color: darkgrey;
+  margin-top: -4vh;
+  height: 900px;
+}
 .userHome h2 {
   text-align: center;
+  padding-top: 2.75vh;
+  margin-bottom: -1vh;
+  color: silver;
 }
 .userHome h1 {
   text-align: center;
+  margin:1.5vh;
 }
 .userHome div {
   text-align: center;
@@ -138,36 +159,66 @@ div section {
   flex-direction: column;
   width: 28%;
 }
+.playerInfo {
+  background: gold;
+}
 .positionContainer h3 {
   border-color: black;
   border-style: solid;
   border-width: thin;
-  background: gold;
+  border-radius: 5px;
+  background: silver;
+  color: white;
   margin: 0;
   margin-top: .2vh;
   margin-bottom: .2vh;
 }
+.positionContainer h4 {
+  color: white;
+}
 .positionContainer div {
+  border-radius: 5px;
+  border-color: white;
   border-style: solid;
-  border-color: black;
   border-width: thin;
-  width: 99%;
-  background: silver;
+  width: 100%;
+  height: 6.5vh;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  margin-bottom: .25vh;
+}
+.logoimage {
+  margin:0;
+  margin-top: .2vh;
+}
+.playerContent {
+  display: flex;
+  flex-direction: column;
+}
+.playerContent h2 {
+  margin:0;
+  margin-bottom: -1.5vh;
+  margin-top: -3.5vh;
+}
+.playerContent h4 {
+  margin:0;
+  margin-top: -1.75vh;
+  margin-bottom: -1vh;
 }
 .positionContainer input[type=button]{
   border-radius: 5px;
   background: red;
-  width: 4vw;
+  width: 4.7vw;
   height: 2vh;
   color: white;
   padding-bottom: 2.5vh;
-}
-.positionContainer h4 {
   margin: 0;
+  margin-top: 1.75vh;
 }
+/*.positionContainer h4 {
+  margin: 0;
+}*/
 .projectionContainer {
   margin-top: 4.5vh;
   display: flex;
@@ -186,6 +237,17 @@ div section {
   align-items:center;
   padding-bottom: 5vh;
 }
+.searchButtons {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.searchButtons h4 {
+  margin: 0;
+}
 .search input {
   height: 5vh;
   width: 30vw;
@@ -201,6 +263,8 @@ div section {
   padding-bottom: 5vh;
 }
 .search input[type = button] {
+  margin-left: auto;
+  margin-right: auto;
   background: green;
   color: white;
   width: 10vw;
@@ -291,7 +355,7 @@ div section {
 #signinDiv {
   position: absolute;
   top: 1vh;
-  left: 61.5vh;
+  left: 60.5vh;
   height: 41vh;
   width: 30vw;
   margin: auto;

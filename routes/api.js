@@ -14,6 +14,12 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/api/users', function(req,res,next){
+  knex('users').then(function(data){
+    res.json(data);
+  })
+})
+
 router.post('/api/signup', function(req, res, next) {
   var password = bcrypt.hashSync(req.body.password, 8);
   knex('users')
@@ -45,7 +51,6 @@ router.post('/api/signup', function(req, res, next) {
 });
 
 router.post('/api/signin', function(req, res, next) {
-  console.log("POSTING");
   knex('users')
   .where({
     username: req.body.username
