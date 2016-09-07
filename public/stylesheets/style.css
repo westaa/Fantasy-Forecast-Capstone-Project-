@@ -29,13 +29,25 @@ header div input[type=button] {
   border-radius: 5px;
   margin-top: 5.5vh;
   margin-left: .5vw;
+  font-family: 'Aldrich', sans-serif;
+  padding-top: 1vh;
 }
 header h2 {
   margin-left: 2vw;
   margin-right: 1vw;
-  margin-top: 5.5vh;
+  margin-top: 6.25vh;
+  font-family: 'Aldrich', sans-serif;
 }
-
+.content h1 {
+  font-family: 'Aldrich', sans-serif;
+  font-size: 3em;
+  color: silver;
+  padding-top: 2vh;
+}
+.content h3 {
+  font-family: 'Aldrich', sans-serif;
+  color: silver;
+}
 /*USER ROSTER DIV*/
 #userRoster {
   width: 100%;
@@ -110,6 +122,7 @@ div section {
   height: 6vh;
   width: 20vw;
   z-index: 2;
+  font-family: 'Aldrich', sans-serif;
 }
 .registration a {
   margin-left: auto;
@@ -118,7 +131,7 @@ div section {
 #signup {
   width: 60vw;
   height: 56vh;
-  margin-top: 20vh;
+  margin-top: 23vh;
   margin-left: 18vw;
 }
 .popup-window {
@@ -140,10 +153,14 @@ div section {
   padding-top: 2.75vh;
   margin-bottom: -1vh;
   color: silver;
+  font-family: 'Aldrich', sans-serif;
 }
 .userHome h1 {
   text-align: center;
-  margin:1.5vh;
+  margin:2.5vh;
+  font-family: 'Aldrich', sans-serif;
+  font-size: 3em;
+  padding-top: 3vh;
 }
 .userHome div {
   text-align: center;
@@ -243,6 +260,7 @@ div section {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-family: 'Aldrich', sans-serif;
 }
 
 .searchButtons h4 {
@@ -323,6 +341,7 @@ div section {
   border-radius: 5px;
   font-size: 1.2em;
   margin-top: 3.75vh;
+  font-family: 'Aldrich', sans-serif;
 }
 #lineupOptimizer select {
   text-align: center;
@@ -351,6 +370,13 @@ div section {
   margin-left: auto;
   margin-right: auto;
 }
+#rosterAnalysisLink {
+  background: green;
+  color: white;
+  height: 5vh;
+  border-radius: 5px;
+  font-size: 1em;
+}
 /*//SIGNIN DIV*/
 #signinDiv {
   position: absolute;
@@ -359,7 +385,7 @@ div section {
   height: 41vh;
   width: 30vw;
   margin: auto;
-  margin-top: 20vh;
+  margin-top: 22vh;
   border-style: solid;
   border-width: .5px;
   border-color: black;
@@ -384,7 +410,7 @@ div section {
   z-index: 2;
   color: black;
   padding-left:1vw;
-  font-size:1.3em;
+  font-size:1.4em;
   }
 
 #signinDiv input[type=submit] {
@@ -392,7 +418,9 @@ div section {
   background: #4c96d7;
   margin-top: .1vh;
   color: white;
-  font-size: 1.4em;}
+  font-size: 1.4em;
+  font-size: 2em;
+  padding-bottom: 5vh;}
 
 
 /*// *** DO NOT WRITE CODE BELOW HERE //*/
@@ -415,7 +443,7 @@ div section {
     height: 100vh;
     opacity: 0.15;
     margin:0;
-    margin-top: -20vh;
+    margin-top: -21vh;
 }
 .content {
     position: relative;

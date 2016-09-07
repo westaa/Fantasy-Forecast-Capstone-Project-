@@ -1,5 +1,4 @@
 <div class = "userHome">
-  <h2>Build a roster. Edit your roster and optimize your lineup weekly.</h2>
   <h1>Roster</h1>
 
 <div class="rosterContainer" class="content">
@@ -146,5 +145,9 @@
   <input type="button" value="Search Again" id="searchAgain">
 </div>
 
+<div ng-show="view.userRoster.WR.length > 1" div="">
+  <div ng-include src="'views/rosterAnalysis.html'"></div>
+    <input type="button" value="Roster Analysis Tools" id="rosterAnalysisLink">
+</div>
 
 </div>
