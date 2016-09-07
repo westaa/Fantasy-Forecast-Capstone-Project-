@@ -237,15 +237,18 @@ div section {
   margin: 0;
 }*/
 .projectionContainer {
-  margin-top: 4.5vh;
+  margin-top: 3.5vh;
   display: flex;
   flex-direction: column;
-  width: 3%;
+  width: 2%;
+  margin-left: -1vw;;
 }
 .projectionContainer h4 {
-  margin: 0;
-  margin-top:.4vh;
-  color: blue;
+  color: green;
+  font-size: 1.5em;
+  margin-left: -.2vw;
+  font-size: 1em;
+  margin-bottom: 1vh;
 }
 .search {
   align-content: center;
@@ -262,7 +265,19 @@ div section {
   justify-content: center;
   font-family: 'Aldrich', sans-serif;
 }
-
+#projSource {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#projSource h4 {
+  margin:0;
+  margin-right: 2vw;
+}
+#projSource select {
+  margin-right: 2vw;
+}
 .searchButtons h4 {
   margin: 0;
 }
@@ -296,6 +311,7 @@ div section {
   padding-bottom: 4.0vh;
   border-radius: 5px;
   font-size: 1.2em;
+  margin-top: 1vh;
 }
 #searchOutput {
   display: flex;
@@ -412,7 +428,6 @@ div section {
   padding-left:1vw;
   font-size:1.4em;
   }
-
 #signinDiv input[type=submit] {
   border-radius: 5px;
   background: #4c96d7;
@@ -421,8 +436,26 @@ div section {
   font-size: 1.4em;
   font-size: 2em;
   padding-bottom: 5vh;}
-
-
+#scoringFormat {
+  margin-left: 5vw;
+}
+label{
+  margin-left: 1vh;
+}
+label h4 {
+  margin-left: 1vw;
+}
+#radioLabel {
+  margin-left: 1vw;
+  margin-top: 1vh;
+}
+#rosterAnalyzer {
+  background: green;
+  color: white;
+  height: 5vh;
+  border-radius: 5px;
+  font-size: 1em;
+}
 /*// *** DO NOT WRITE CODE BELOW HERE //*/
 /*THE CSS BELOW MUST GO AT THE END OF FILE*/
 .container {  position: relative; }

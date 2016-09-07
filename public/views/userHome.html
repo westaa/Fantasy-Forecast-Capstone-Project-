@@ -20,7 +20,7 @@
   </div>
 
   <div class = "projectionContainer">
-    <h4 ng-repeat="QBprojection in view.qbProjections">
+    <h4 ng-repeat="QBprojection in view.qbProjections track by $index">
       {{QBprojection}}
     </h4>
   </div>
@@ -39,14 +39,14 @@
   </div>
 
   <div class = "projectionContainer">
-    <h4 ng-repeat="RBprojection in view.rbProjections">
+    <h4 ng-repeat="RBprojection in view.rbProjections track by $index">
       {{RBprojection}}
     </h4>
   </div>
 
   <div class="positionContainer">
     <h3>Wide Receivers</h3>
-    <h4 ng-hide="view.userRoster.WR.length > 0">(Empty)</h4>
+    <h4 ng-hide="view.userRoster.WR.length> 0">(Empty)</h4>
     <div ng-repeat="WR in view.userRoster.WR">
       <input type="button" value="remove">
       <section class="playerContent">
@@ -58,7 +58,7 @@
   </div>
 
   <div class = "projectionContainer">
-    <h4 ng-repeat="WRprojection in view.wrProjections">
+    <h4 ng-repeat="WRprojection in view.wrProjections track by $index">
       {{WRprojection}}
     </h4>
   </div>
@@ -84,7 +84,7 @@
   </div>
 
   <div class = "projectionContainer">
-    <h4 ng-repeat="TEprojection in view.teProjections">
+    <h4 ng-repeat="TEprojection in view.teProjections track by $index">
       {{TEprojection}}
     </h4>
   </div>
@@ -103,7 +103,7 @@
   </div>
 
   <div class = "projectionContainer">
-    <h4 ng-repeat="Kprojection in view.kProjections">
+    <h4 ng-repeat="Kprojection in view.kProjections track by $index">
       {{Kprojection}}
     </h4>
   </div>
@@ -122,7 +122,7 @@
   </div>
 
   <div class = "projectionContainer">
-    <h4 ng-repeat="DEFprojection in view.defProjections">
+    <h4 ng-repeat="DEFprojection in view.defProjections track by $index">
       {{DEFprojection}}
     </h4>
   </div>
@@ -145,9 +145,55 @@
   <input type="button" value="Search Again" id="searchAgain">
 </div>
 
-<div ng-show="view.userRoster.WR.length > 1" div="">
-  <div ng-include src="'views/rosterAnalysis.html'"></div>
-    <input type="button" value="Roster Analysis Tools" id="rosterAnalysisLink">
+<div ng-show="view.userRoster.WR.length > 1">
+  <div id ="projSource">
+    <label for="source"><h4>Select Projection Source</h4>
+      <select name="projectionSource" id="source">
+        <option value="yahoo">Yahoo</option>
+        <option value="ffn">Fantasy Football Nerd</option>
+        <option value="ESPN">ESPN</option>
+      </select>
+    </label>
+    <div>
+      <input type="button" value="Get Projections" id="getProj" ng-click="view.getQBProjections(view.userRoster.QB[0].playerId,
+      view.userRoster.QB[1].playerId, view.userRoster.QB[2].playerId, view.userRoster.RB[0].playerId, view.userRoster.RB[1].playerId, view.userRoster.RB[2].playerId, view.userRoster.RB[3].playerId,
+      view.userRoster.RB[4].playerId,
+      view.userRoster.RB[5].playerId, view.userRoster.WR[0].playerId, view.userRoster.WR[1].playerId, view.userRoster.WR[2].playerId,
+      view.userRoster.WR[3].playerId,
+      view.userRoster.WR[4].playerId,
+      view.userRoster.WR[5].playerId,
+      view.userRoster.TE[0].playerId,
+      view.userRoster.TE[1].playerId, view.userRoster.TE[2].playerId,
+      view.userRoster.TE[3].playerId,
+      view.userRoster.K[0].playerId, view.userRoster.K[1].playerId,
+      view.userRoster.K[2].playerId,
+      view.userRoster.DEF[0].playerId, view.userRoster.DEF[1].playerId
+      ); showRosterAnalysis = ! showRosterAnalysis;">
+    </div>
+    <label for="radioinputs" id="radioLabel"><h4 id ="scoringFormat">Select Scoring Format</h4>
+      <div id ="radioinputs">
+        <label for="ppr">PPR</label>
+        <input type="radio" value="PPR" id="ppr" name="scoreFormat">
+        <label for="standard">Standard</label>
+        <input type="radio" value="Standard" id="standard" name="scoreFormat">
+      </div>
+    </label>
+    <input type="button" value="Roster Analysis" id="rosterAnalyzer" ng-click="scrollTo('rosterAnalyzer')">
+  </div>
 </div>
 
-</div>
+<section ng-show="showRosterAnalysis" id="rosterAnalysis">
+  <div id ="rosterAnalysis">
+    <h2>Roster Analysis Tools</h2>
+    <div id ="lineupOptimizer">
+      <label for="format"><h4>Select Lineup Format</h4>
+        <select name="format" id="format">
+          <option value="1Flex">1 QB, 2 RB, 2 WR, 1 TE, 1 FLEX, 1 K, 1 DEF</option>
+          <option value="0Flex">1 QB, 2 RB, 3 WR, 1 TE, 1 DEF</option>
+          <option value="2QB">2 QB, 2 RB, 3 WR, 1 TE, 1 DEF</option>
+      </select>
+    </label>
+    <input type="button" value="Optimize Lineup" ng-click="optimizeLineup()">
+    </div>
+  </div>
+</section>

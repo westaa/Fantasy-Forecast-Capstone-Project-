@@ -1,4 +1,4 @@
-app.controller('fantasyController', function($scope, $location, $http, $window, $route, $routeParams, fantasyService, $rootScope){
+app.controller('fantasyController', function($scope, $location, $http, $window, $route, $routeParams, fantasyService, $rootScope, $anchorScroll){
 
   $scope.view = {},
   $scope.view.message = "wired up and working!";
@@ -21,6 +21,11 @@ app.controller('fantasyController', function($scope, $location, $http, $window, 
   $scope.view.defProjections = fantasyService.defProjections;
   $scope.view.welcome = fantasyService.welcome;
   $scope.view.username = fantasyService.username;
+
+$scope.scrollTo = function(id) {
+      $location.hash(id);
+      $anchorScroll();
+   }
 
 $scope.view.signUp = function(usernameSignup) {
     fantasyService.signUp(
@@ -93,7 +98,7 @@ $scope.view.addToRoster = function (searchedPlayer){
   console.log(searchedPlayer);
 }
 
-$scope.view.getQBProjections = function (qbId0, qbId1, qbId2, rbId0, rbId1, rbId2, rbId3, wrId0, wrId1, wrId2, wrId3, teId0, teId1, teId2, teId3, kId0, kId1, kId2, defId0, defId1) {
+$scope.view.getQBProjections = function (qbId0, qbId1, qbId2, rbId0, rbId1, rbId2, rbId3, rbId4, rbId5, wrId0, wrId1, wrId2, wrId3, wrId4, wrId5, teId0, teId1, teId2, teId3, kId0, kId1, kId2, defId0, defId1) {
   $http.get('/JSON/QB.json').then(function(data){
     for (var i = 0; i < data.data.length; i++) {
       if (data.data[i].playerId === qbId0){
@@ -121,9 +126,16 @@ $scope.view.getQBProjections = function (qbId0, qbId1, qbId2, rbId0, rbId1, rbId
     if (data.data[i].playerId === rbId3){
       $scope.view.rbProjections.push(data.data[i].standard);
     }
+    if (data.data[i].playerId === rbId4){
+      $scope.view.rbProjections.push(data.data[i].standard);
+    }
+    if (data.data[i].playerId === rbId5){
+      $scope.view.rbProjections.push(data.data[i].standard);
+    }
     }
   })
   $http.get('/JSON/WR.json').then(function(data){
+    console.log(wrId0, wrId1, wrId2, wrId3, wrId4, wrId5);
     for (var i = 0; i < data.data.length; i++) {
     if (data.data[i].playerId === wrId0){
       $scope.view.wrProjections.push(data.data[i].standard);
@@ -135,6 +147,12 @@ $scope.view.getQBProjections = function (qbId0, qbId1, qbId2, rbId0, rbId1, rbId
       $scope.view.wrProjections.push(data.data[i].standard);
     }
     if (data.data[i].playerId === wrId3){
+      $scope.view.wrProjections.push(data.data[i].standard);
+    }
+    if (data.data[i].playerId === wrId4){
+      $scope.view.wrProjections.push(data.data[i].standard);
+    }
+    if (data.data[i].playerId === wrId5){
       $scope.view.wrProjections.push(data.data[i].standard);
     }
     }
