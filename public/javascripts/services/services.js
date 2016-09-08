@@ -31,6 +31,7 @@ app.factory('fantasyService', function($http, $location) {
     qkProjections: [],
     defProjections: [],
     kProjections: [],
+    highestProjected: [],
     welcome: ''
     }
 })

@@ -9,6 +9,20 @@ header{
   background: darkgreen;
   margin: 0;
 }
+#homepageP {
+  font-family: 'Aldrich', sans-serif;
+  color: silver;
+  width: 60%;
+  font-size: 1.5em;
+  border-color:silver;
+  border-style: solid;
+  border-width: thin;
+  margin-left: auto;
+  margin-right: auto;
+}
+#homePageH1Div {
+  margin-top: 2vh;
+}
 header img {
   height: 25vh;
   margin-top: -5vh;
@@ -174,7 +188,7 @@ div section {
 .positionContainer {
   display: flex;
   flex-direction: column;
-  width: 28%;
+  width: 27%;
 }
 .playerInfo {
   background: gold;
@@ -226,12 +240,14 @@ div section {
 .positionContainer input[type=button]{
   border-radius: 5px;
   background: red;
-  width: 4.7vw;
+  width: 3.7vw;
   height: 2vh;
   color: white;
   padding-bottom: 2.5vh;
   margin: 0;
   margin-top: 1.75vh;
+  font-size: .8em;
+  padding-right: 3.4vw;
 }
 /*.positionContainer h4 {
   margin: 0;
@@ -240,15 +256,17 @@ div section {
   margin-top: 3.5vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   width: 2%;
   margin-left: -1vw;;
 }
 .projectionContainer h4 {
+  display: flex;
+  align-self: middle;
   color: green;
-  font-size: 1.5em;
-  margin-left: -.2vw;
-  font-size: 1em;
-  margin-bottom: 1vh;
+  font-size: 1.35em;
+  margin: 0;
+  margin-left: -.8vw;
 }
 .search {
   align-content: center;
@@ -277,6 +295,19 @@ div section {
 }
 #projSource select {
   margin-right: 2vw;
+  width: 12vw;
+  height: 3.5vh;
+  font-size: 1.1em;
+}
+#instructionH3 {
+  border-color: grey;
+  margin-top: 1vh;
+  border-style: solid;
+  border-width: thin;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 51%;
 }
 .searchButtons h4 {
   margin: 0;
@@ -357,7 +388,7 @@ div section {
   border-radius: 5px;
   font-size: 1.2em;
   margin-top: 3.75vh;
-  font-family: 'Aldrich', sans-serif;
+  margin-left: 2vw;
 }
 #lineupOptimizer select {
   text-align: center;
@@ -376,15 +407,40 @@ div section {
   margin-bottom: 1vh;
 }
 #rosterAnalysis {
-  width: 95%;
+  width: 99%;
   margin-top: 2vh;
   border-style: solid;
-  border-color: black;
+  border-color: white;
   border-width: thin;
-  padding-bottom: 5vh;
-  justify-content: center;
   margin-left: auto;
   margin-right: auto;
+  padding-left:1vw;
+  height: 100vh;
+  background-image: url('http://img.wallpaperfolder.com/f/66FEBCE954C0/best-american-football-pictures.jpg');
+  z-index: 2;
+  font-size: black;
+}
+#rosterAnalysis h2 {
+  color: black
+}
+#rosterAnalyzerButton {
+  background: green;
+  color: white;
+  height: 5vh;
+  border-radius: 5px;
+  font-size: 1.3em;
+  display:block;
+  margin-top: 2.5vh;
+  text-align: center;
+  margin-right: 1vw;
+}
+.centeringContainer {
+  width: 100%;
+  margin-right:auto;
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 #rosterAnalysisLink {
   background: green;
@@ -393,11 +449,20 @@ div section {
   border-radius: 5px;
   font-size: 1em;
 }
+#rosterAnalysisSection {
+  border-color: grey;
+  border-style: solid;
+  border-width: thin;
+  background: silver;
+  width: 100;
+  height: 60vh;
+}
+
 /*//SIGNIN DIV*/
 #signinDiv {
   position: absolute;
   top: 1vh;
-  left: 60.5vh;
+  left: 57.5vh;
   height: 41vh;
   width: 30vw;
   margin: auto;
@@ -439,22 +504,13 @@ div section {
 #scoringFormat {
   margin-left: 5vw;
 }
-label{
-  margin-left: 1vh;
+#scoringFormatSelectorDiv {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2vw;
 }
-label h4 {
-  margin-left: 1vw;
-}
-#radioLabel {
-  margin-left: 1vw;
-  margin-top: 1vh;
-}
-#rosterAnalyzer {
-  background: green;
-  color: white;
-  height: 5vh;
-  border-radius: 5px;
-  font-size: 1em;
+#radioinputs {
+  margin-left: -1vw;
 }
 /*// *** DO NOT WRITE CODE BELOW HERE //*/
 /*THE CSS BELOW MUST GO AT THE END OF FILE*/

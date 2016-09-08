@@ -2,10 +2,9 @@
   <h1>Roster</h1>
 
 <div class="rosterContainer" class="content">
-
   <div class = "projectionContainer">
+    <!-- //SPACE HOLDER DIV - NO CONTENT -->
   </div>
-
   <div class="positionContainer">
     <h3>Quarterbacks</h3>
     <h4 ng-hide="view.userRoster.QB.length > 0">(Empty)</h4>
@@ -67,8 +66,8 @@
 
 <div class="rosterContainer">
 
-  <div class = "projectionContainer">
-  </div>
+<div class = "projectionContainer">
+</div>
 
   <div class="positionContainer">
     <h3>Tight Ends</h3>
@@ -126,7 +125,6 @@
       {{DEFprojection}}
     </h4>
   </div>
-
 </div>
 
 <div class="search">
@@ -134,10 +132,9 @@
     <input type="text" placeholder="player name" ng-model="view.player">
     <input type="button" value="Find Player" ng-click="view.searchPlayer(view.player)">
   </div>
-
 </div>
 
-<div id="searchOutput" ng-repeat="player in view.searchedPlayer track by $index" ng-show="view.searchPlayerToggle">
+<div id="searchOutput" ng-repeat="player in view.searchedPlayer track by $index" ng-show="view.searchPlayerToggle = true">
   <h3>{{player.displayName}}</h3>
   <h3>{{player.position}}</h3>
   <h3>{{player.team | teamName}}</h3>
@@ -145,7 +142,9 @@
   <input type="button" value="Search Again" id="searchAgain">
 </div>
 
-<div ng-show="view.userRoster.WR.length > 1">
+<h3 id ="instructionH3" ng-show = "view.userRoster.WR.length > 0 && view.userRoster.RB.length > -1">Select source for projections and your league's scoring format, and then click "Get Projections".  Next, select "Roster Analysis" to optimize your roster.</h3>
+
+<div ng-show="view.userRoster.WR.length > 0 && view.userRoster.RB.length > -1">
   <div id ="projSource">
     <label for="source"><h4>Select Projection Source</h4>
       <select name="projectionSource" id="source">
@@ -168,8 +167,9 @@
       view.userRoster.K[0].playerId, view.userRoster.K[1].playerId,
       view.userRoster.K[2].playerId,
       view.userRoster.DEF[0].playerId, view.userRoster.DEF[1].playerId
-      ); showRosterAnalysis = ! showRosterAnalysis;">
+      ); view.searchPlayerToggle = true; showRosterAnalysis = ! showRosterAnalysis;">
     </div>
+    <div id="scoringFormatSelectorDiv">
     <label for="radioinputs" id="radioLabel"><h4 id ="scoringFormat">Select Scoring Format</h4>
       <div id ="radioinputs">
         <label for="ppr">PPR</label>
@@ -177,13 +177,19 @@
         <label for="standard">Standard</label>
         <input type="radio" value="Standard" id="standard" name="scoreFormat">
       </div>
+    </div>
     </label>
-    <input type="button" value="Roster Analysis" id="rosterAnalyzer" ng-click="scrollTo('rosterAnalyzer')">
   </div>
 </div>
 
-<section ng-show="showRosterAnalysis" id="rosterAnalysis">
-  <div id ="rosterAnalysis">
+<div class = "centeringContainer">
+  <input type="button" value="Roster Analysis" id="rosterAnalyzerButton" ng-click="scrollTo('scrollHere');" ng-show="view.userRoster.WR.length > 0 && view.userRoster.RB.length > -1">
+</div>
+
+
+<br>
+<section ng-show="showRosterAnalysis" id="rosterAnalysis" class="content">
+  <div>
     <h2>Roster Analysis Tools</h2>
     <div id ="lineupOptimizer">
       <label for="format"><h4>Select Lineup Format</h4>
@@ -193,7 +199,13 @@
           <option value="2QB">2 QB, 2 RB, 3 WR, 1 TE, 1 DEF</option>
       </select>
     </label>
-    <input type="button" value="Optimize Lineup" ng-click="optimizeLineup()">
+    <input type="button" value="Optimize Lineup" ng-click="view.optimizeLineup()">
+    </div>
+    <div class="rosterContainer">
+      <div></div>
     </div>
   </div>
+  </div>
+
 </section>
+<h6 id="scrollHere"></h6>
