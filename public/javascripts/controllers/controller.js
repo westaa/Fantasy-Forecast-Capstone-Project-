@@ -21,7 +21,7 @@ app.controller('fantasyController', function($scope, $location, $http, $window, 
   $scope.view.defProjections = fantasyService.defProjections;
   $scope.view.welcome = fantasyService.welcome;
   $scope.view.username = fantasyService.username;
-  $scope.view.highestProjected = fantasyService.highestProjected;
+  $scope.view.highestProjected = []
 
   $scope.scrollTo = function(id) {
         $location.hash(id);
@@ -194,8 +194,10 @@ $scope.view.getQBProjections = function (qbId0, qbId1, qbId2, rbId0, rbId1, rbId
     }
     }
   })
-  $scope.view.optimizeLineup =  function () {
-
+  $scope.view.optimizeLineup =  function (qb0, rb0, rb1, wr0, wr1, te0, k0, d0) {
+    $scope.view.highestProjected.push(arguments);
+    console.log($scope.view.highestProjected);
   }
+
 }
 })

@@ -199,10 +199,14 @@
           <option value="2QB">2 QB, 2 RB, 3 WR, 1 TE, 1 DEF</option>
       </select>
     </label>
-    <input type="button" value="Optimize Lineup" ng-click="view.optimizeLineup()">
-    </div>
+    <input type="button" value="Optimize Lineup" ng-click="view.optimizeLineup(view.userRoster.QB[0], view.userRoster.RB[0], view.userRoster.RB[1], view.userRoster.WR[0],
+    view.userRoster.WR[1], view.userRoster.TE[0], view.userRoster.K[0], view.userRoster.DEF[0])">
+  </div> 
     <div class="rosterContainer">
-      <div></div>
+      <!-- <div ng-repeat="player in view.highestProjected">
+        <h6>{{player}}</h6>
+      </div> -->
+      </div>
     </div>
   </div>
   </div>
