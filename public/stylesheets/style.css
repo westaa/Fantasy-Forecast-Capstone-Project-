@@ -512,6 +512,16 @@ div section {
 #radioinputs {
   margin-left: -1vw;
 }
+#highestRatedDiv {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+#highestRatedDiv h3{
+  margin: 0;
+  color: silver;
+}
 /*// *** DO NOT WRITE CODE BELOW HERE //*/
 /*THE CSS BELOW MUST GO AT THE END OF FILE*/
 .container {  position: relative; }
