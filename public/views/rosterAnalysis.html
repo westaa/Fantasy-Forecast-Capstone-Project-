@@ -1,21 +1,76 @@
-<div id ="rosterAnalysis">
-  <h2>Roster Analysis Tools</h2>
-  <div id ="lineupOptimizer">
-    <label for="radioinputs"><h4>Select Scoring Format</h4>
-      <div id ="radioinputs">
-        <label for="ppr">PPR</label>
-        <input type="radio" value="PPR" id="ppr" name="scoreFormat">
-        <label for="standard">Standard</label>
-        <input type="radio" value="Standard" id="standard" name="scoreFormat">
-      </div>
-    </label>
-    <label for="format"><h4>Select Lineup Format</h4>
-      <select name="format" id="format">
-        <option value="1Flex">1 QB, 2 RB, 2 WR, 1 TE, 1 FLEX, 1 K, 1 DEF</option>
-        <option value="0Flex">1 QB, 2 RB, 3 WR, 1 TE, 1 DEF</option>
-        <option value="2QB">2 QB, 2 RB, 3 WR, 1 TE, 1 DEF</option>
-    </select>
-  </label>
-  <input type="button" value="Optimize Lineup" ng-click="optimizeLineup()">
+<div id="rosterAnalysis">
+
+  <div id="formatSelectionDiv">
+    <select name="format" id="format" ng-model="view.lineupFormat">
+    <option value="" ng-selected="true">Select Lineup Format</option>
+    <option value="1Flex">1 QB, 2 RB, 2 WR, 1 TE, 1 FLEX, 1 K, 1 DEF</option>
+    <option value="0Flex">1 QB, 2 RB, 3 WR, 1 TE, 1 DEF</option>
+  </select>
+
+  <input type="button" value="Optimize Roster" id="lineupOptimizerButton" ng-click="view.optimizeLineup()">
   </div>
+  <div id="currentRosterContainerDiv">
+    <h1>Current Roster</h1>
+    <div id="currentRoster">
+      <div>
+        <h4><b>Quarterbacks</b></h4>
+        <h5 ng-repeat="player in view.userRoster.QB">
+            {{player.displayName}}
+            <img ng-src="{{player.team | teamLogo}}" height="17.5" width:"17.5">
+        </h5>
+      </div>
+
+      <div>
+        <h4><b>Runningbacks</b></h4>
+        <h5 ng-repeat="player in view.userRoster.RB">
+            {{player.displayName}}
+            <img ng-src="{{player.team | teamLogo}}" height="17.5" width:"17.5">
+        </h5>
+      </div>
+
+      <div>
+        <h4><b>Wide Receivers</b></h4>
+        <h5 ng-repeat="player in view.userRoster.WR">
+            {{player.displayName}}
+            <img ng-src="{{player.team | teamLogo}}" height="17.5" width:"17.5">
+        </h5>
+      </div>
+
+      <div>
+        <h4><b>Tight Ends</b></h4>
+        <h5 ng-repeat="player in view.userRoster.TE">
+            {{player.displayName}}
+            <img ng-src="{{player.team | teamLogo}}" height="17.5" width:"17.5">
+        </h5>
+      </div>
+
+      <div>
+        <h4>Kickers</h4>
+        <h5 ng-repeat="player in view.userRoster.K">
+            {{player.displayName}}
+            <img ng-src="{{player.team | teamLogo}}" height="17.5" width:"17.5">
+        </h5>
+      </div>
+
+      <div>
+        <h4><b>Defenses</b></h4>
+        <h5 ng-repeat="player in view.userRoster.DEF">
+            {{player.displayName}}
+            <img ng-src="{{player.team | teamLogo}}" height="17.5" width:"17.5">
+        </h5>
+      </div>
+
+    </div>
+  </div>
+
+  <div id ="optimizedRoster">
+    Testing
+    <h1 ng-model="view.highestQB">{{view.highestQB.displayName}}</h1>
+    <h1 ng-model="view.highestQB">{{view.highestRB.displayName}}</h1>
+    <h1 ng-model="view.highestQB">{{view.highestWR.displayName}}</h1>
+    <h1 ng-model="view.highestQB">{{view.highestTE.displayName}}</h1>
+    <h1 ng-model="view.highestQB">{{view.highestK.displayName}}</h1>
+    <h1 ng-model="view.highestQB">{{view.highestDEF.displayName}}</h1>
+  </div>
+
 </div>

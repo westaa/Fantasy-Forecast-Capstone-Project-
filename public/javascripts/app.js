@@ -16,7 +16,7 @@ app.config(function($routeProvider){
   })
   .when('/rosterAnalysis', {
     templateUrl: '/../views/rosterAnalysis.html',
-    controller: 'fantasyController'
+    controller: 'optmizerController'
   })
   .when('/userHome/:id', {
   templateUrl: '/../views/userHome.html',

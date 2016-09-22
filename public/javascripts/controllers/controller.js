@@ -13,12 +13,6 @@ app.controller('fantasyController', function($scope, $location, $http, $window, 
   $scope.view.userRoster.K = fantasyService.kickers;
   $scope.view.userRoster.DEF = fantasyService.defense;
   $scope.view.searchPlayerToggle = true;
-  $scope.view.qbProjections = fantasyService.qbProjections;
-  $scope.view.rbProjections = fantasyService.rbProjections;
-  $scope.view.wrProjections = fantasyService.wrProjections;
-  $scope.view.teProjections = fantasyService.teProjections;
-  $scope.view.kProjections = fantasyService.kProjections;
-  $scope.view.defProjections = fantasyService.defProjections;
   $scope.view.welcome = fantasyService.welcome;
   $scope.view.username = fantasyService.username;
   $scope.view.highestProjected = []
@@ -96,108 +90,171 @@ $scope.view.addToRoster = function (searchedPlayer){
   }
   $scope.view.searchedPlayer = [];
   $scope.view.searchPlayerToggle = false;
-  console.log(searchedPlayer);
+  console.log($scope.view.userRoster.QB);
 }
 
 $scope.view.getQBProjections = function (qbId0, qbId1, qbId2, rbId0, rbId1, rbId2, rbId3, rbId4, rbId5, wrId0, wrId1, wrId2, wrId3, wrId4, wrId5, teId0, teId1, teId2, teId3, kId0, kId1, kId2, defId0, defId1) {
-  console.log(defId0, defId1);
   $http.get('/JSON/QB.json').then(function(data){
     for (var i = 0; i < data.data.length; i++) {
       if (data.data[i].playerId === qbId0){
-        $scope.view.qbProjections.push(data.data[i].standard);
+        $scope.view.userRoster.QB[0].projection = data.data[i].standard;
       }
       if (data.data[i].playerId === qbId1){
-        $scope.view.qbProjections.push(data.data[i].standard);
+        $scope.view.userRoster.QB[1].projection = data.data[i].standard;
       }
       if (data.data[i].playerId === qbId2){
-        $scope.view.qbProjections.push(data.data[i].standard);
+        $scope.view.userRoster.QB[2].projection = data.data[i].standard;
       }
     }
   });
   $http.get('/JSON/RB.json').then(function(data){
     for (var i = 0; i < data.data.length; i++) {
     if (data.data[i].playerId === rbId0){
-      $scope.view.rbProjections.push(data.data[i].standard);
+      $scope.view.userRoster.RB[0].projection = data.data[i].standard;
     }
     if (data.data[i].playerId === rbId1){
-      $scope.view.rbProjections.push(data.data[i].standard);
+      $scope.view.userRoster.RB[1].projection = data.data[i].standard;
     }
     if (data.data[i].playerId === rbId2){
-      $scope.view.rbProjections.push(data.data[i].standard);
+      $scope.view.userRoster.RB[2].projection = data.data[i].standard;
     }
     if (data.data[i].playerId === rbId3){
-      $scope.view.rbProjections.push(data.data[i].standard);
+      $scope.view.userRoster.RB[3].projection = data.data[i].standard;
     }
     if (data.data[i].playerId === rbId4){
-      $scope.view.rbProjections.push(data.data[i].standard);
+      $scope.view.userRoster.RB[4].projection = data.data[i].standard;
     }
     if (data.data[i].playerId === rbId5){
-      $scope.view.rbProjections.push(data.data[i].standard);
+      $scope.view.userRoster.RB[5].projection = data.data[i].standard;
     }
     }
   })
   $http.get('/JSON/WR.json').then(function(data){
     for (var i = 0; i < data.data.length; i++) {
     if (data.data[i].playerId === wrId0){
-      $scope.view.wrProjections.push(data.data[i].standard);
+      $scope.view.userRoster.WR[0].projection = data.data[i].standard;
     }
     if (data.data[i].playerId === wrId1){
-      $scope.view.wrProjections.push(data.data[i].standard);
+      $scope.view.userRoster.WR[1].projection = data.data[i].standard;
     }
     if (data.data[i].playerId === wrId2){
-      $scope.view.wrProjections.push(data.data[i].standard);
+      $scope.view.userRoster.WR[2].projection = data.data[i].standard;
     }
     if (data.data[i].playerId === wrId3){
-      $scope.view.wrProjections.push(data.data[i].standard);
+      $scope.view.userRoster.WR[3].projection = data.data[i].standard;
     }
     if (data.data[i].playerId === wrId4){
-      $scope.view.wrProjections.push(data.data[i].standard);
+      $scope.view.userRoster.WR[4].projection = data.data[i].standard;
     }
     if (data.data[i].playerId === wrId5){
-      $scope.view.wrProjections.push(data.data[i].standard);
+      $scope.view.userRoster.WR[5].projection = data.data[i].standard;
     }
     }
   })
   $http.get('/JSON/TE.json').then(function(data){
     for (var i = 0; i < data.data.length; i++) {
     if (data.data[i].playerId === teId0){
-      $scope.view.teProjections.push(data.data[i].standard);
+      $scope.view.userRoster.TE[0].projection = data.data[i].standard;
     }
     if (data.data[i].playerId === teId1){
-      $scope.view.teProjections.push(data.data[i].standard);
+      $scope.view.userRoster.TE[1].projection = data.data[i].standard;
     }
     if (data.data[i].playerId === teId2){
-      $scope.view.teProjections.push(data.data[i].standard);
+        $scope.view.userRoster.TE[2].projection = data.data[i].standard;
     }
     if (data.data[i].playerId === teId3){
-      $scope.view.teProjections.push(data.data[i].standard);
+      $scope.view.userRoster.TE[3].projection = data.data[i].standard;
     }
     }
   })
   $http.get('/JSON/K.json').then(function(data){
     for (var i = 0; i < data.data.length; i++) {
     if (data.data[i].playerId === kId0){
-      $scope.view.kProjections.push(data.data[i].standard);
+      $scope.view.userRoster.K[0].projection = data.data[i].standard;
     }
     if (data.data[i].playerId === kId1){
-      $scope.view.kProjections.push(data.data[i].standard);
+      $scope.view.userRoster.K[1].projection = data.data[i].standard;
     }
     }
   })
   $http.get('/JSON/DEF.json').then(function(data){
     for (var i = 0; i < data.data.length; i++) {
     if (data.data[i].playerId === defId0){
-      $scope.view.defProjections.push(data.data[i].defSack);
+      $scope.view.userRoster.DEF[0].projection = data.data[i].standard;
     }
     if (data.data[i].playerId === defId1){
-      $scope.view.defProjections.push(data.data[i].defSack);
+      $scope.view.userRoster.DEF[1].projection = data.data[i].standard;
     }
     }
   })
-  $scope.view.optimizeLineup =  function (qb0, rb0, rb1, wr0, wr1, te0, k0, d0) {
-    $scope.view.highestProjected.push(arguments);
-    console.log($scope.view.highestProjected);
-  }
-
 }
+})
+
+app.controller('optmizerController', function($scope,$location, $http, $window, $route, $routeParams, fantasyService, $rootScope, $anchorScroll){
+
+  $scope.view = {};
+  $scope.view.userRoster = fantasyService.userRoster;
+  $scope.view.highestQB = fantasyService.highestQB;
+  $scope.view.highestRB = fantasyService.highestRB;
+  $scope.view.highestWR = fantasyService.highestWR;
+  $scope.view.highestTE = fantasyService.highestTE;
+  $scope.view.highestK = fantasyService.highestK;
+  $scope.view.highestDEF = fantasyService.highestDEF;
+
+
+  $scope.view.optimizeLineup = function () {
+    var highest = 0;
+    for (var i = 0; i < $scope.view.userRoster.QB.length; i++) {
+      if ($scope.view.userRoster.QB[i].projection > highest) {
+        var highest = $scope.view.userRoster.QB[i];
+      }
+    }
+    fantasyService.highestQB = highest;
+    $scope.view.highestQB = fantasyService.highestQB;
+
+    var highestRB = 0;
+    for (var i = 0; i < $scope.view.userRoster.RB.length; i++) {
+      if ($scope.view.userRoster.RB[i].projection > highestRB) {
+        highestRB = $scope.view.userRoster.RB[i];
+      }
+    }
+    fantasyService.highestRB = highestRB;
+    $scope.view.highestRB = fantasyService.highestRB;
+
+    var highestWR = 0;
+    for (var i = 0; i < $scope.view.userRoster.WR.length; i++) {
+      if ($scope.view.userRoster.WR[i].projection > highestWR) {
+        highestWR = $scope.view.userRoster.WR[i];
+      }
+    }
+    fantasyService.highestWR = highestWR;
+    $scope.view.highestWR = fantasyService.highestWR;
+
+    var highestTE = 0;
+    for (var i = 0; i < $scope.view.userRoster.TE.length; i++) {
+      if ($scope.view.userRoster.TE[i].projection > highestTE) {
+        highestTE = $scope.view.userRoster.TE[i];
+      }
+    }
+    fantasyService.highestTE = highestTE;
+    $scope.view.highestTE = fantasyService.highestTE;
+
+    var highestK = 0;
+    for (var i = 0; i < $scope.view.userRoster.K.length; i++) {
+      if ($scope.view.userRoster.K[i].projection > highestK) {
+        highestK = $scope.view.userRoster.K[i];
+      }
+    }
+    fantasyService.highestK = highestK;
+    $scope.view.highestK = fantasyService.highestK;
+
+    var highestDEF = 0;
+    for (var i = 0; i < $scope.view.userRoster.DEF.length; i++) {
+      if ($scope.view.userRoster.DEF[i].projection > highestDEF) {
+        highestDEF = $scope.view.userRoster.DEF[i];
+      }
+    }
+    fantasyService.highestDEF = highestDEF;
+    $scope.view.highestDEF = fantasyService.highestDEF;
+  }
 })

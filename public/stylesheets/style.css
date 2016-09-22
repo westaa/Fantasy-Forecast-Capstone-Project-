@@ -240,19 +240,18 @@ div section {
 .positionContainer input[type=button]{
   border-radius: 5px;
   background: red;
-  width: 3.7vw;
   height: 2vh;
   color: white;
-  padding-bottom: 2.5vh;
+  padding-bottom: 3.1vh;
   margin: 0;
   margin-top: 1.75vh;
-  font-size: .8em;
-  padding-right: 3.4vw;
+  font-size: .9em;
 }
 /*.positionContainer h4 {
   margin: 0;
 }*/
 .projectionContainer {
+  margin:0;
   margin-top: 3.5vh;
   display: flex;
   flex-direction: column;
@@ -273,7 +272,7 @@ div section {
   display: flex;
   flex-direction: column;
   align-items:center;
-  padding-bottom: 5vh;
+  padding-bottom: 2.5vh;
 }
 .searchButtons {
   margin-left: auto;
@@ -288,10 +287,13 @@ div section {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-top:1.5vh;
 }
 #projSource h4 {
   margin:0;
   margin-right: 2vw;
+  margin-bottom: .5vh;
+  margin-top:.5vh;
 }
 #projSource select {
   margin-right: 2vw;
@@ -301,13 +303,34 @@ div section {
 }
 #instructionH3 {
   border-color: grey;
-  margin-top: 1vh;
+  margin:0;
   border-style: solid;
   border-width: thin;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
   width: 51%;
+  margin-top: 1%;
+  font-size:.75em;
+}
+#searchOutput {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#searchOutputTextDiv {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-color: gold;
+  border-style: solid;
+  border-width: thick;
+  margin-top:.75%;
+}
+#searchOutput h3 {
+  margin-left:1vw;
+  margin-right: 1vw;
 }
 .searchButtons h4 {
   margin: 0;
@@ -344,37 +367,31 @@ div section {
   font-size: 1.2em;
   margin-top: 1vh;
 }
-#searchOutput {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+
+#searchOutput h3{
+  margin_top: 0;
 }
 #searchAgain {
   margin-top: 2.5vh;
   height: 5vh;
-  width: 8vw;
+  width: 120px;
   border-radius: 5px;
   font-size: .9em;
   background: blue;
   color: white;
+  padding-right:10px;
 }
 #addPlayer {
   margin-top: 2.5vh;
   height: 5vh;
-  width: 12vw;
+  width: 210px;
   border-radius: 5px;
-  font-size: .9em;
+  font-size: 1.1em;
   background: green;
   color: white;
 }
 /*//LINEUP OPTIMIZER DIV*/
-#lineupOptimizer {
-  margin-top: 2vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  padding-bottom: 10vh;
-}
+
 #lineupOptimizer h4 {
   margin: 0;
   margin-top: 1vh;
@@ -392,7 +409,6 @@ div section {
 }
 #lineupOptimizer select {
   text-align: center;
-  padding-left: 12vw;
   height: 4vh;
   font-size: .8em;
 }
@@ -402,38 +418,110 @@ div section {
 #source {
   width: 8vw;
 }
+#scoringFormat {
+  display: flex;
+  flex-direction: row;
+  margin-right:-140px
+}
+#scoringFormat h6 {
+  margin:0;
+  margin-bottom: -8px;
+}
+input[type=radio] {
+    transform: scale(.5);
+    margin:0;
+}
+#standardDiv {
+  margin-left: -260px;
+}
 #lineupOptimizer h4 {
   margin-top: 0;
   margin-bottom: 1vh;
 }
+label #scoringFormatH4{
+  padding-left: 175px;
+}
 #rosterAnalysis {
-  width: 99%;
-  margin-top: 2vh;
-  border-style: solid;
-  border-color: white;
-  border-width: thin;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left:1vw;
+  width: 100%;
+  margin-top: 0vh;
   height: 100vh;
   background-image: url('http://www.fg-a.com/wallpapers/geo-shapes-black-1280.jpg');
   z-index: 2;
-  font-size: black;
-}
-#rosterAnalysis h2 {
-  color: black
-}
-#rosterAnalyzerButton {
-  background: green;
-  color: white;
-  height: 5vh;
-  border-radius: 5px;
-  font-size: 1.3em;
-  display:block;
-  margin-top: 2.5vh;
+  color:silver;
+  font-family: 'Aldrich', sans-serif;
   text-align: center;
-  margin-right: 1vw;
+  display:flex;
+  flex-direction: column;
+  padding:0;
 }
+#formatSelectionDiv {
+  margin-top: 20px;
+}
+#rosterAnalysis h1 {
+  text-align: center;
+  margin:0;
+  margin-top: 4vh;
+  margin-bottom: 2vh;
+}
+#rosterAnalysis h4 {
+  margin: 0;
+  margin-top:1%;
+  margin-bottom: .25%;
+}
+#rosterAnalysis select {
+  height:25px;
+  font-size:1.0em;
+  width: 20vw;
+}
+#lineupOptimizerButton {
+  height: 4vh;
+  width: 10vw;
+  font-size: 1em;
+  color: white;
+  background: green;
+  border-radius: 5px;
+  margin-right: 2vw;
+}
+#currentRoster {
+  margin-top: 10px;
+  width:90%;
+  margin-right: auto;
+  margin-left: auto;
+  background: silver;
+  height:250px;
+  display:flex;
+  flex-direction:row;
+  justify-content: space-around;
+  color:black;
+}
+#currentRosterContainerDiv {
+  margin-top: 3vh;
+  width:90%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display:flex;
+  flex-direction: column;
+  background: silver;
+  color:black;
+}
+#currentRosterContainerDiv h1 {
+  margin-top: 2vh;
+}
+#currentRoster div {
+  display:flex;
+  flex-direction:column;
+  align-content: middle;
+}
+#currentRoster div h5 {
+  margin:0;
+  margin-top:.3vh;
+  padding-bottom:.7vh;
+}
+#currentRoster div h4 {
+  margin:0;
+}
+
 .centeringContainer {
   width: 100%;
   margin-right:auto;
@@ -457,7 +545,14 @@ div section {
   width: 100;
   height: 60vh;
 }
-
+#rosterAnalysisButton {
+  height: 5vh;
+  width:16vw;
+  color:white;
+  background: green;
+  font-size: 1.3em;
+  border-radius: 5px;
+}
 /*//SIGNIN DIV*/
 #signinDiv {
   position: absolute;
@@ -501,17 +596,11 @@ div section {
   font-size: 1.4em;
   font-size: 2em;
   padding-bottom: 5vh;}
-#scoringFormat {
-  margin-left: 5vw;
+
+#radioLabel {
+  margin-left:5vw;
 }
-#scoringFormatSelectorDiv {
-  display: flex;
-  flex-direction: column;
-  margin-left: 2vw;
-}
-#radioinputs {
-  margin-left: -1vw;
-}
+
 #highestRatedDiv {
   width: 100%;
   display: flex;
@@ -522,6 +611,17 @@ div section {
   margin: 0;
   color: silver;
 }
+
+/*optimized roster div*/
+#optimizedRoster {
+  margin-top: 2vh;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*// Current roster and optimal div*/
+
+
 /*// *** DO NOT WRITE CODE BELOW HERE //*/
 /*THE CSS BELOW MUST GO AT THE END OF FILE*/
 .container {  position: relative; }

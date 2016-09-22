@@ -21,17 +21,17 @@ app.factory('fantasyService', function($http, $location) {
     quarterBacks: [],
     runningBacks: [],
     wideReceivers: [],
-    tightTends: [],
     kickers: [],
     defense: [],
-    qbProjections: [],
-    rbProjections: [],
-    wrProjections: [],
-    teProjections: [],
-    qkProjections: [],
-    defProjections: [],
-    kProjections: [],
-    highestProjected: [],
+    tightTends: [],
+
+    highestQB: '',
+    highestRB: '',
+    highestWR: '',
+    highestTE: '',
+    highestK: '',
+    highestDEF: '',
+
     welcome: ''
     }
 })

@@ -1,15 +1,18 @@
 app.filter('teamName', function(){
   return function(input){
+    input = input.toLowerCase();
     if (input == undefined){
       return '';
     }
     if (input == 'stl') {
       return "Los Angeles Rams"
     }
-    if (input === 'MIN') {
+    if (input === 'min') {
       return "Minnesota Vikings"
     }
-    input = input.toLowerCase();
+    if (input === 'tb') {
+      return "Tampa Bay Buccaneers"
+    }
     for (var i = 0; i < teams.length; i++) {
       if (teams[i][0].substring(0,2) == input.substring(0,2)){
         return teams[i][1];
@@ -19,7 +22,7 @@ app.filter('teamName', function(){
 })
 
 app.filter('teamLogo', function(){
-  var imageArr = ['javascripts/filters/NFLlogos/Img64.jpg',   'javascripts/filters/NsFLlogos/Img115.jpg',
+  var imageArr = ['javascripts/filters/NFLlogos/Img64.jpg', 'javascripts/filters/NFLlogos/Img115.jpg',
   'javascripts/filters/NFLlogos/Img143.jpg',
   'javascripts/filters/NFLlogos/Img3348.jpg',
   'javascripts/filters/NFLlogos/Img3920.jpg',
@@ -55,7 +58,8 @@ app.filter('teamLogo', function(){
     input = input.toLowerCase();
     if (input == "min") {
       return 'javascripts/filters/NFLlogos/Img4456.jpg'
-    } else
+    } else if (input == 'tb'){return 'javascripts/filters/NFLlogos/Img434.jpg'}
+    else
     for (var i = 0; i < teams.length; i++) {
       if (teams[i][0].substring(0,2) == input.substring(0,2)) {
       return imageArr[i];
