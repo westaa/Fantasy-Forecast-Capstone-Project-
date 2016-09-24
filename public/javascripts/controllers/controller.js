@@ -194,67 +194,32 @@ app.controller('optmizerController', function($scope,$location, $http, $window, 
 
   $scope.view = {};
   $scope.view.userRoster = fantasyService.userRoster;
-  $scope.view.highestQB = fantasyService.highestQB;
-  $scope.view.highestRB = fantasyService.highestRB;
-  $scope.view.highestWR = fantasyService.highestWR;
-  $scope.view.highestTE = fantasyService.highestTE;
-  $scope.view.highestK = fantasyService.highestK;
-  $scope.view.highestDEF = fantasyService.highestDEF;
 
-
-  $scope.view.optimizeLineup = function () {
-    var highest = 0;
-    for (var i = 0; i < $scope.view.userRoster.QB.length; i++) {
-      if ($scope.view.userRoster.QB[i].projection > highest) {
-        var highest = $scope.view.userRoster.QB[i];
-      }
-    }
-    fantasyService.highestQB = highest;
-    $scope.view.highestQB = fantasyService.highestQB;
-
-    var highestRB = 0;
-    for (var i = 0; i < $scope.view.userRoster.RB.length; i++) {
-      if ($scope.view.userRoster.RB[i].projection > highestRB) {
-        highestRB = $scope.view.userRoster.RB[i];
-      }
-    }
-    fantasyService.highestRB = highestRB;
-    $scope.view.highestRB = fantasyService.highestRB;
-
-    var highestWR = 0;
-    for (var i = 0; i < $scope.view.userRoster.WR.length; i++) {
-      if ($scope.view.userRoster.WR[i].projection > highestWR) {
-        highestWR = $scope.view.userRoster.WR[i];
-      }
-    }
-    fantasyService.highestWR = highestWR;
-    $scope.view.highestWR = fantasyService.highestWR;
-
-    var highestTE = 0;
-    for (var i = 0; i < $scope.view.userRoster.TE.length; i++) {
-      if ($scope.view.userRoster.TE[i].projection > highestTE) {
-        highestTE = $scope.view.userRoster.TE[i];
-      }
-    }
-    fantasyService.highestTE = highestTE;
-    $scope.view.highestTE = fantasyService.highestTE;
-
-    var highestK = 0;
-    for (var i = 0; i < $scope.view.userRoster.K.length; i++) {
-      if ($scope.view.userRoster.K[i].projection > highestK) {
-        highestK = $scope.view.userRoster.K[i];
-      }
-    }
-    fantasyService.highestK = highestK;
-    $scope.view.highestK = fantasyService.highestK;
-
-    var highestDEF = 0;
-    for (var i = 0; i < $scope.view.userRoster.DEF.length; i++) {
-      if ($scope.view.userRoster.DEF[i].projection > highestDEF) {
-        highestDEF = $scope.view.userRoster.DEF[i];
-      }
-    }
-    fantasyService.highestDEF = highestDEF;
-    $scope.view.highestDEF = fantasyService.highestDEF;
-  }
+$scope.view.sortedQBs = fantasyService.userRoster.QB.sort(function(a,b){
+  return b.projection - a.projection
+})
+;
+$scope.view.sortedRBs = fantasyService.userRoster.RB.sort(function(a,b){
+  return b.projection - a.projection
+})
+;
+$scope.view.sortedWRs = fantasyService.userRoster.WR.sort(function(a,b){
+  return b.projection - a.projection
+})
+;
+$scope.view.sortedTEs = fantasyService.userRoster.TE.sort(function(a,b){
+  return b.projection - a.projection
+})
+;
+$scope.view.sortedKs = fantasyService.userRoster.K.sort(function(a,b){
+  return b.projection - a.projection
+})
+;
+$scope.view.sortedDEFs = fantasyService.userRoster.DEF.sort(function(a,b){
+  return b.projection - a.projection
+})
+$scope.view.flex = fantasyService.userRoster.WR.concat(fantasyService.userRoster.RB, fantasyService.userRoster.TE).sort(function(a,b){
+  return b.projection - a.projection
+})
+;
 })

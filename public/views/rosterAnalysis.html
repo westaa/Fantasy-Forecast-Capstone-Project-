@@ -1,76 +1,87 @@
 <div id="rosterAnalysis">
-
-  <div id="formatSelectionDiv">
-    <select name="format" id="format" ng-model="view.lineupFormat">
-    <option value="" ng-selected="true">Select Lineup Format</option>
-    <option value="1Flex">1 QB, 2 RB, 2 WR, 1 TE, 1 FLEX, 1 K, 1 DEF</option>
-    <option value="0Flex">1 QB, 2 RB, 3 WR, 1 TE, 1 DEF</option>
+  <select name="format" id="format" ng-model="view.lineupFormat">
+      <option value="1Flex">1 QB, 2 RB, 2 WR, 1 TE, 1 FLEX, 1 K, 1 DEF</option>
+      <option value="0Flex" ng-selected="true">1 QB, 2 RB, 3 WR, 1 TE, 1 DEF</option>
   </select>
-
-  <input type="button" value="Optimize Roster" id="lineupOptimizerButton" ng-click="view.optimizeLineup()">
-  </div>
-  <div id="currentRosterContainerDiv">
-    <h1>Current Roster</h1>
-    <div id="currentRoster">
-      <div>
-        <h4><b>Quarterbacks</b></h4>
-        <h5 ng-repeat="player in view.userRoster.QB">
-            {{player.displayName}}
-            <img ng-src="{{player.team | teamLogo}}" height="17.5" width:"17.5">
-        </h5>
-      </div>
-
-      <div>
-        <h4><b>Runningbacks</b></h4>
-        <h5 ng-repeat="player in view.userRoster.RB">
-            {{player.displayName}}
-            <img ng-src="{{player.team | teamLogo}}" height="17.5" width:"17.5">
-        </h5>
-      </div>
-
-      <div>
-        <h4><b>Wide Receivers</b></h4>
-        <h5 ng-repeat="player in view.userRoster.WR">
-            {{player.displayName}}
-            <img ng-src="{{player.team | teamLogo}}" height="17.5" width:"17.5">
-        </h5>
-      </div>
-
-      <div>
-        <h4><b>Tight Ends</b></h4>
-        <h5 ng-repeat="player in view.userRoster.TE">
-            {{player.displayName}}
-            <img ng-src="{{player.team | teamLogo}}" height="17.5" width:"17.5">
-        </h5>
-      </div>
-
-      <div>
-        <h4>Kickers</h4>
-        <h5 ng-repeat="player in view.userRoster.K">
-            {{player.displayName}}
-            <img ng-src="{{player.team | teamLogo}}" height="17.5" width:"17.5">
-        </h5>
-      </div>
-
-      <div>
-        <h4><b>Defenses</b></h4>
-        <h5 ng-repeat="player in view.userRoster.DEF">
-            {{player.displayName}}
-            <img ng-src="{{player.team | teamLogo}}" height="17.5" width:"17.5">
-        </h5>
-      </div>
-
+<div id = "optimizedRoster">
+  <h1>Optimized Lineup</h1>
+  <div id="optimizedPositions">
+    <div>
+      <h4>Quarterback</h4>
+      <h4>
+        {{view.sortedQBs[0].displayName}}
+        <img ng-src = "{{view.sortedQBs[0].team | teamLogo}}" height="15px" width="15px">
+      </h4>
     </div>
+
+    <div>
+      <h4>Running Back 1</h4>
+      <h4>
+        {{view.sortedRBs[0].displayName}}
+        <img ng-src = "{{view.sortedRBs[0].team | teamLogo}}" height="15px" width="15px">
+      </h4>
+      <br>
+      <h4>Running Back 2</h4>
+      <h4>
+        {{view.sortedRBs[1].displayName}}
+        <img ng-src = "{{view.sortedRBs[1].team | teamLogo}}" height="15px" width="15px">
+      </h4>
+    </div>
+
+    <div>
+      <h4>Wide Receiver 1</h4>
+      <h4>
+        {{view.sortedWRs[0].displayName}}
+        <img ng-src = "{{view.sortedWRs[0].team | teamLogo}}" height="15px" width="15px">
+      </h4>
+      <br>
+      <h4>Wide Receiver 2</h4>
+      <h4>
+        {{view.sortedWRs[1].displayName}}
+        <img ng-src = "{{view.sortedWRs[1].team | teamLogo}}" height="15px" width="15px">
+      </h4>
+      <br>
+      <h4>Wide Receiver 3</h4>
+      <h4>
+        {{view.sortedWRs[2].displayName}}
+        <img ng-src = "{{view.sortedWRs[2].team | teamLogo}}" height="15px" width="15px">
+      </h4>
+    </div>
+
+    <div>
+      <h4>Tight End</h4>
+      <h4>
+        {{view.sortedTEs[0].displayName}}
+        <img ng-src = "{{view.sortedTEs[0].team | teamLogo}}" height="15px" width="15px">
+      </h4>
+    </div>
+<!-- //use concat to sort combination of three arrays -->
+    <div>
+      <h4>Kicker</h4>
+      <h4>
+        {{view.sortedKs[0].displayName}}
+        <img ng-src = "{{view.sortedKs[0].team | teamLogo}}" height="15px" width="15px">
+      </h4>
+    </div>
+
+    <div>
+      <h4>Defense</h4>
+      <h4>
+        {{view.sortedDEFs[0].displayName}}
+        <img ng-src = "{{view.sortedDEFs[0].team | teamLogo}}" height="15px" width="15px">
+      </h4>
+    </div>
+
+    <div>
+      <h4>Flex</h4>
+      <h4>
+        {{view.flex[0].displayName}}
+    <img ng-src = "{{view.flex[0].team | teamLogo}}" height="15px" width="15px">
+  </h4>
+    </div>
+
   </div>
 
-  <div id ="optimizedRoster">
-    Testing
-    <h1 ng-model="view.highestQB">{{view.highestQB.displayName}}</h1>
-    <h1 ng-model="view.highestQB">{{view.highestRB.displayName}}</h1>
-    <h1 ng-model="view.highestQB">{{view.highestWR.displayName}}</h1>
-    <h1 ng-model="view.highestQB">{{view.highestTE.displayName}}</h1>
-    <h1 ng-model="view.highestQB">{{view.highestK.displayName}}</h1>
-    <h1 ng-model="view.highestQB">{{view.highestDEF.displayName}}</h1>
-  </div>
+</div>
 
 </div>

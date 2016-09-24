@@ -4,6 +4,12 @@ app.filter('teamName', function(){
     if (input == undefined){
       return '';
     }
+    if (input == 'kc') {
+      return "Kansas City Chiefs"
+    }
+    if (input == 'kan') {
+      return "Kansas City Chiefs"
+    }
     if (input == 'stl') {
       return "Los Angeles Rams"
     }
@@ -58,8 +64,13 @@ app.filter('teamLogo', function(){
     input = input.toLowerCase();
     if (input == "min") {
       return 'javascripts/filters/NFLlogos/Img4456.jpg'
-    } else if (input == 'tb'){return 'javascripts/filters/NFLlogos/Img434.jpg'}
-    else
+    }
+    if (input == 'tb'){
+      return 'javascripts/filters/NFLlogos/Img434.jpg'}
+    if (input == "kc") {
+      return
+      'javascripts/filters/NFLlogos/Img270.jpg'
+    }
     for (var i = 0; i < teams.length; i++) {
       if (teams[i][0].substring(0,2) == input.substring(0,2)) {
       return imageArr[i];

@@ -25,13 +25,6 @@ app.factory('fantasyService', function($http, $location) {
     defense: [],
     tightTends: [],
 
-    highestQB: '',
-    highestRB: '',
-    highestWR: '',
-    highestTE: '',
-    highestK: '',
-    highestDEF: '',
-
     welcome: ''
     }
 })
