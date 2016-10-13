@@ -22,6 +22,17 @@ app.controller('fantasyController', function($scope, $location, $http, $window, 
         $anchorScroll();
      }
 
+$scope.view.removePlayer = function (playerId) {
+  for (var x in $scope.view.userRoster) {
+    for (var i = 0; i < $scope.view.userRoster[x].length; i++) {
+      if ($scope.view.userRoster[x][i].playerId === playerId) {
+        var index = $scope.view.userRoster[x].indexOf($scope.view.userRoster[x][i]);
+        $scope.view.userRoster[x].splice(index, 1)
+      }
+    }
+  }
+};
+
 $scope.view.signUp = function(usernameSignup) {
     fantasyService.signUp(
     $scope.view.usernameSignup,

@@ -9,7 +9,7 @@
     <h3>Quarterbacks</h3>
     <h4 ng-hide="view.userRoster.QB.length > 0">(Empty)</h4>
     <div ng-repeat="QB in view.userRoster.QB">
-      <input type="button" value="remove">
+      <input type="button" value="remove" ng-click="view.removePlayer(QB.playerId)">
       <section class="playerContent">
         <h2>{{QB.displayName}}</h2>
         <h4>{{QB.team | teamName}}</h4>
@@ -28,7 +28,7 @@
     <h3>Runningbacks</h3>
     <h4 ng-hide="view.userRoster.RB.length > 0">(Empty)</h4>
     <div ng-repeat="RB in view.userRoster.RB">
-      <input type="button" value="remove">
+      <input type="button" value="remove" ng-click="view.removePlayer(RB.playerId)">
       <section class="playerContent">
         <h2>{{RB.displayName}}</h2>
         <h4>{{RB.team | teamName}}</h4>
@@ -47,7 +47,7 @@
     <h3>Wide Receivers</h3>
     <h4 ng-hide="view.userRoster.WR.length> 0">(Empty)</h4>
     <div ng-repeat="WR in view.userRoster.WR">
-      <input type="button" value="remove">
+      <input type="button" value="remove" ng-click="view.removePlayer(WR.playerId)">
       <section class="playerContent">
         <h2>{{WR.displayName}}</h2>
         <h4>{{WR.team | teamName}}</h4>
@@ -73,7 +73,7 @@
     <h3>Tight Ends</h3>
     <h4 ng-hide="view.userRoster.TE.length > 0">(Empty)</h4>
     <div ng-repeat="TE in view.userRoster.TE">
-      <input type="button" value="remove">
+      <input type="button" value="remove" ng-click="view.removePlayer(TE.playerId)">
       <section class="playerContent">
         <h2>{{TE.displayName}}</h2>
         <h4>{{TE.team | teamName}}</h4>
@@ -92,7 +92,7 @@
     <h3>Kickers</h3>
     <h4 ng-hide="view.userRoster.K.length > 0">(Empty)</h4>
     <div ng-repeat="K in view.userRoster.K">
-      <input type="button" value="remove">
+      <input type="button" value="remove" ng-click="view.removePlayer(K.playerId)">
       <section class="playerContent">
         <h2>{{K.displayName}}</h2>
         <h4>{{K.team | teamName}}</h4>
@@ -111,7 +111,7 @@
     <h3>Defenses</h3>
     <h4 ng-hide="view.userRoster.DEF.length > 0">(Empty)</h4>
     <div ng-repeat="DEF in view.userRoster.DEF">
-      <input type="button" value="remove">
+      <input type="button" value="remove" ng-click="view.removePlayer(DEF.playerId)">
       <section class="playerContent">
         <h2>{{DEF.displayName}}</h2>
         <h4>{{DEF.team | teamName}}</h4>
