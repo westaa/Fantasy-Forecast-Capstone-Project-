@@ -469,6 +469,11 @@ label #scoringFormatH4{
   margin-top:1%;
   margin-bottom: .25%;
 }
+.positionHeader {
+  border-color: black;
+  border-style: solid;
+  border-width: thin;
+}
 #rosterAnalysis select {
   height:45px;
   font-size:1.0em;

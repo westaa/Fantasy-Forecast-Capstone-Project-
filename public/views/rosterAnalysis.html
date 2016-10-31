@@ -7,7 +7,7 @@
   <h1>Optimized Lineup</h1>
   <div id="optimizedPositions">
     <div>
-      <h4>Quarterback</h4>
+      <h4 class ="positionHeader">Quarterback</h4>
       <h4>
         {{view.sortedQBs[0].displayName}}
         <img ng-src = "{{view.sortedQBs[0].team | teamLogo}}" height="15px" width="15px">
@@ -15,13 +15,13 @@
     </div>
 
     <div>
-      <h4>Running Back 1</h4>
+      <h4 class ="positionHeader">Running Back 1</h4>
       <h4>
         {{view.sortedRBs[0].displayName}}
         <img ng-src = "{{view.sortedRBs[0].team | teamLogo}}" height="15px" width="15px">
       </h4>
       <br>
-      <h4>Running Back 2</h4>
+      <h4 class ="positionHeader">Running Back 2</h4>
       <h4>
         {{view.sortedRBs[1].displayName}}
         <img ng-src = "{{view.sortedRBs[1].team | teamLogo}}" height="15px" width="15px">
@@ -29,19 +29,19 @@
     </div>
 
     <div>
-      <h4>Wide Receiver 1</h4>
+      <h4 class ="positionHeader">Wide Receiver 1</h4>
       <h4>
         {{view.sortedWRs[0].displayName}}
         <img ng-src = "{{view.sortedWRs[0].team | teamLogo}}" height="15px" width="15px">
       </h4>
       <br>
-      <h4>Wide Receiver 2</h4>
+      <h4 class ="positionHeader">Wide Receiver 2</h4>
       <h4>
         {{view.sortedWRs[1].displayName}}
         <img ng-src = "{{view.sortedWRs[1].team | teamLogo}}" height="15px" width="15px">
       </h4>
       <br>
-      <h4>Wide Receiver 3</h4>
+      <h4 class ="positionHeader">Wide Receiver 3</h4>
       <h4>
         {{view.sortedWRs[2].displayName}}
         <img ng-src = "{{view.sortedWRs[2].team | teamLogo}}" height="15px" width="15px">
@@ -49,7 +49,7 @@
     </div>
 
     <div>
-      <h4>Tight End</h4>
+      <h4 class ="positionHeader">Tight End</h4>
       <h4>
         {{view.sortedTEs[0].displayName}}
         <img ng-src = "{{view.sortedTEs[0].team | teamLogo}}" height="15px" width="15px">
@@ -57,7 +57,7 @@
     </div>
 <!-- //use concat to sort combination of three arrays -->
     <div>
-      <h4>Kicker</h4>
+      <h4 class ="positionHeader">Kicker</h4>
       <h4>
         {{view.sortedKs[0].displayName}}
         <img ng-src = "{{view.sortedKs[0].team | teamLogo}}" height="15px" width="15px">
@@ -65,7 +65,7 @@
     </div>
 
     <div>
-      <h4>Defense</h4>
+      <h4 class ="positionHeader">Defense</h4>
       <h4>
         {{view.sortedDEFs[0].displayName}}
         <img ng-src = "{{view.sortedDEFs[0].team | teamLogo}}" height="15px" width="15px">
@@ -73,7 +73,7 @@
     </div>
 
     <div>
-      <h4>Flex</h4>
+      <h4 class ="positionHeader">Flex</h4>
       <h4>
         {{view.flex[0].displayName}}
     <img ng-src = "{{view.flex[0].team | teamLogo}}" height="15px" width="15px">
