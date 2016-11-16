@@ -16,6 +16,16 @@ app.controller('fantasyController', function($scope, $location, $http, $window, 
   $scope.view.welcome = fantasyService.welcome;
   $scope.view.username = fantasyService.username;
   $scope.view.highestProjected = []
+  $scope.view.infoDiv = true;
+
+  $scope.view.toggleInfoDiv = function () {
+    if ($scope.view.infoDiv = true) {
+      $scope.view.infoDiv === false;
+    }
+    else if ($scope.view.infoDiv = false) {
+      $scope.view.infoDiv === true;
+    }
+  }
 
   $scope.scrollTo = function(id) {
         $location.hash(id);
