@@ -17,19 +17,19 @@
 </head>
 
   <body>
-  <header ng-click='hideDiv = ! hideDiv'>
+  <header>
     <a ng-href="/#/">
-    <logo class="content"></logo>
+    <logo class="content" ng-click='hideDiv = !hideDiv'></logo>
     </a>
     <div ng-show="user" ng-controller="fantasyController">
       <h2>Welcome to your homepage, {{user.username}}.</h2>
       <input type="button" ng-click="view.signOut()" value="Sign Out" class="content">
     </div>
     <div ng-hide="user">
-      <a ng-href="/#/signIn" class="content">
+      <a ng-href="/#/signIn" class="content" ng-click='hideDiv = !hideDiv'>
         <h2>Login</h2>
       </a>
-      <a ng-href="/#/signUp" class="content">
+      <a ng-href="/#/signUp" class="content" ng-click='hideDiv = !hideDiv'>
         <h2>Register</h2>
       </a>
     </div>

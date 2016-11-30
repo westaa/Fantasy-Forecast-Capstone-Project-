@@ -58,6 +58,11 @@ $scope.view.signUp = function(usernameSignup) {
     })
   }
 
+$scope.openPopUp = function() {
+    $scope.view.popUp = true;
+    console.log('open');
+    }
+
 $scope.view.signIn = function(username) {
   fantasyService.username = username;
   $scope.view.username = username;

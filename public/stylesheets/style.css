@@ -37,7 +37,7 @@ header div{
 }
 header div input[type=button] {
   background: silver;
-  height: 4vh;
+  height: 30px;;
   color: black;
   font-size: 1.1em;
   border-radius: 5px;
@@ -133,10 +133,12 @@ div section {
 .registration input[type=submit]{
   background: green;
   color: white;
-  height: 6vh;
-  width: 20vw;
+  height: 35px;
+  width: 300px;
   z-index: 2;
   font-family: 'Aldrich', sans-serif;
+  font-size: 1.4em;
+  padding-top: 8px;
 }
 .registration a {
   margin-left: auto;
@@ -207,13 +209,16 @@ div section {
 .positionContainer h4 {
   color: white;
 }
+.positionContainer h2 {
+  font-size: 1.2em;
+}
 .positionContainer div {
   border-radius: 5px;
   border-color: white;
   border-style: solid;
   border-width: thin;
   width: 100%;
-  height: 6.5vh;
+  height: 42px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -346,22 +351,21 @@ div section {
 .search input[type = submit] {
   background: green;
   color: white;
-  width: 15vw;
-  padding-bottom: 5vh;
+  width: 150px;
+  padding-bottom: 15px;
 }
 .search input[type = button] {
   margin-left: auto;
   margin-right: auto;
   background: green;
   color: white;
-  width: 10vw;
+  width: 133px;
   font-size: 1.2em;
 }
 #getProj {
   background: green;
   color: white;
-  width: 13vw;
-  height: 4.5vh;
+  width: 180px;
   padding-bottom: 4.0vh;
   border-radius: 5px;
   font-size: 1.2em;
@@ -369,7 +373,7 @@ div section {
 }
 
 #searchOutput h3{
-  margin_top: 0;
+  margin top: 0;
 }
 #searchAgain {
   margin-top: 2.5vh;
@@ -418,15 +422,7 @@ div section {
 #source {
   width: 8vw;
 }
-#scoringFormat {
-  display: flex;
-  flex-direction: row;
-  margin-right:-140px
-}
-#scoringFormat h6 {
-  margin:0;
-  margin-bottom: -8px;
-}
+
 input[type=radio] {
     transform: scale(.5);
     margin:0;
@@ -438,9 +434,7 @@ input[type=radio] {
   margin-top: 0;
   margin-bottom: 1vh;
 }
-label #scoringFormatH4{
-  padding-left: 175px;
-}
+
 #rosterAnalysis {
   width: 100%;
   margin-top: 0vh;
@@ -484,7 +478,17 @@ label #scoringFormatH4{
   background: silver;
   font-family: 'Aldrich', sans-serif;
   font-size: 1.5em;
-
+}
+#scoreFormat label{
+  margin-right: -40px;
+  margin-bottom: -50px;
+}
+#scoreFormat input[type=radio] {
+margin-right: -250px;
+}
+#scoreFormat h4 {
+  margin:0;
+  margin-right: -115px;
 }
 #rosterAnalysis select option {
   font-family: 'Aldrich', sans-serif;
@@ -612,9 +616,10 @@ label #scoringFormatH4{
   background: #4c96d7;
   margin-top: .1vh;
   color: white;
-  font-size: 1.4em;
-  font-size: 2em;
-  padding-bottom: 5vh;}
+  font-size: 1.6em;
+  padding-bottom: 30px;
+  width: 140px;
+  }
 
 #radioLabel {
   margin-left:5vw;
