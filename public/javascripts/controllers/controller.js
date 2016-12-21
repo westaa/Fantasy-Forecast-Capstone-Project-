@@ -17,6 +17,7 @@ app.controller('fantasyController', function($scope, $location, $http, $window, 
   $scope.view.username = fantasyService.username;
   $scope.view.highestProjected = []
   $scope.view.infoDiv = true;
+  $scope.view.greeting = fantasyService.greeting;
 
   $scope.view.toggleInfoDiv = function () {
     if ($scope.view.infoDiv = true) {
@@ -53,7 +54,7 @@ $scope.view.signUp = function(usernameSignup) {
       } else {
         localStorage.jwt = res.data.token;
         $location.path('/userHome');
-        $window.location.reload();
+        window.location.href = window.location.href;
       }
     })
   }
@@ -64,19 +65,16 @@ $scope.openPopUp = function() {
     }
 
 $scope.view.signIn = function(username) {
-  fantasyService.username = username;
-  $scope.view.username = username;
   console.log(username);
+  fantasyService.username = username;
   fantasyService.signIn($scope.view.username, $scope.view.password).then(function (res) {
     if(res.data.errors){
       $scope.view.error = res.data.errors;
     }
     else{
-      console.log('username before assignment', username);
-      $scope.view.greeting = username;
       localStorage.jwt = res.data.token;
       $location.path('/userHome');
-      $window.location.reload();
+$window.location.reload();
     }
   });
 }
@@ -84,7 +82,7 @@ $scope.view.signIn = function(username) {
 $scope.view.signOut = function() {
   localStorage.clear();
   $location.path('/');
-  $window.location.reload();
+  window.location.reload();
 }
 
 $scope.view.searchPlayer = function (player){

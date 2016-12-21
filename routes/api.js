@@ -20,6 +20,10 @@ router.get('/api/users', function(req,res,next){
   })
 })
 
+router.get('/userHome', function(req,res,next){
+  res.redirect('userHome.html')
+  })
+
 router.post('/api/signup', function(req, res, next) {
   var password = bcrypt.hashSync(req.body.password, 8);
   knex('users')

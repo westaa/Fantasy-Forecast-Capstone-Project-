@@ -22,7 +22,7 @@
     <logo class="content" ng-click='hideDiv = !hideDiv'></logo>
     </a>
     <div ng-show="user" ng-controller="fantasyController">
-      <h2>Welcome to your homepage, {{user.username}}.</h2>
+      <h2>Welcome to your homepage, {{user.username}}</h2>
       <input type="button" ng-click="view.signOut()" value="Sign Out" class="content">
     </div>
     <div ng-hide="user">
@@ -38,7 +38,7 @@
   <div ng-view>
   </div>
 
-  <div class="container" id="homePageh1Div" ng-hide="hideDiv">
+  <div class="container" id="homePageh1Div" ng-hide="hideDiv || user">
     <div class="content">
       <h1>Fantasy Forecast</h1>
       <h3>Optimize your Lineup and Own your League.

@@ -14,6 +14,8 @@ app.factory('fantasyService', function($http, $location) {
       return $http.post('/api/signin', user);
     },
     message: 'Welcome to your account.',
+    greeting: '',
+    username: '',
     player: '',
     searchedPlayer: [],
     userRoster: {},
@@ -24,7 +26,6 @@ app.factory('fantasyService', function($http, $location) {
     kickers: [],
     defense: [],
     tightTends: [],
-
     welcome: ''
     }
 })
