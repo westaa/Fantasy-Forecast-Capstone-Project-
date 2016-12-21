@@ -23,6 +23,11 @@ header{
 #homePageH1Div {
   margin-top: 2vh;
 }
+#h1Div h1{
+font-size: 7em;}
+#h1Div h3{
+font-size: 4em;}
+
 header img {
   height: 25vh;
   margin-top: -5vh;
