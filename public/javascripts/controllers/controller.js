@@ -54,7 +54,8 @@ $scope.view.signUp = function(usernameSignup) {
       } else {
         localStorage.jwt = res.data.token;
         $location.path('/userHome');
-        window.location.href = window.location.href;
+        $location.reload();
+        history.go(0);
       }
     })
   }
@@ -74,7 +75,8 @@ $scope.view.signIn = function(username) {
     else{
       localStorage.jwt = res.data.token;
       $location.path('/userHome');
-$window.location.reload();
+      $location.reload();
+$history.go(0);
     }
   });
 }
@@ -82,7 +84,8 @@ $window.location.reload();
 $scope.view.signOut = function() {
   localStorage.clear();
   $location.path('/');
-  window.location.reload();
+  $location.reload();
+  history.go(0);
 }
 
 $scope.view.searchPlayer = function (player){
