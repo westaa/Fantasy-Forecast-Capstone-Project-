@@ -65,18 +65,20 @@ $scope.openPopUp = function() {
     console.log('open');
     }
 
+
+$scope.view.greeting = '';
 $scope.view.signIn = function(username) {
-  console.log(username);
-  fantasyService.username = username;
-  fantasyService.signIn($scope.view.username, $scope.view.password).then(function (res) {
+  $scope.view.greeting = 'Welcome to your homepage, ' + username;
+  fantasyService.signIn(username, $scope.view.password).then(function (res) {
     if(res.data.errors){
       $scope.view.error = res.data.errors;
     }
     else{
+      $scope.view.userName = username;
       localStorage.jwt = res.data.token;
+        $window.location.reload();
       $location.path('/userHome');
-      $location.reload();
-$history.go(0);
+
     }
   });
 }
@@ -84,8 +86,7 @@ $history.go(0);
 $scope.view.signOut = function() {
   localStorage.clear();
   $location.path('/');
-  $location.reload();
-  history.go(0);
+  $window.location.reload();
 }
 
 $scope.view.searchPlayer = function (player){

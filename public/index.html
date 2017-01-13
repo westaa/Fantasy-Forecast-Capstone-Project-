@@ -22,7 +22,7 @@
     <logo class="content" ng-click='hideDiv = !hideDiv'></logo>
     </a>
     <div ng-show="user" ng-controller="fantasyController">
-      <h2>Welcome to your homepage, {{view.username}}</h2>
+      <h2>{{view.greeting}}</h2>
       <input type="button" ng-click="view.signOut()" value="Sign Out" class="content">
     </div>
     <div ng-hide="user">
